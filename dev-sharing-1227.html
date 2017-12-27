@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Performance matters</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif', 'Lato', sans-serif;
+        line-height: 2;
+      }
+      h1, h2, h3, h4, h5 {
+        font-family: 'Lato', sans-serif;
+        color: #1e556f;
+        /* font-weight: normal; */
+      }
+      img {
+        max-width: 95%;
+      }
+      blockquote {
+        border-left: 5px solid #eee;
+        padding-left: 1em;
+        margin-left: inherit;
+        font-family: 'Lato', sans-serif;
+        color: #777;
+        font-style: italic;
+      }
+      a {
+        color: #009fc6;
+        text-decoration: none;
+      }
+      strong {
+        color: #384b56;
+      }
+      code {
+        padding: 5px 8px;
+        background: #f5f5f5;
+        border-radius: 3px;
+      }
+      .remark-container {
+        background: linear-gradient(to bottom,#006080,#005572),linear-gradient(#f2f5f6,#f2f5f6);
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-slide-scaler {
+        -webkit-box-shadow: 0 0 30px #444;
+        box-shadow: 0 0 30px #444;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+<!-- $theme: default -->
+
+# Performance matters
+@maxis Dec. 27
+
+---
+
+class: center, middle
+
+## The battle between Front-End frameworks
+
+---
+
+
+## Warriors
+
+
+- React / Redux
+- Elm
+- Angular 4+
+- Angular 1.5+
+- React / MobX
+- Crizmas MVC
+- CLSJ Keechma
+- AppRun
+- CLJS re-frame
+
+---
+
+### Criteria to make a meaningful comparison
+
+- A real world app - Something more than a "todo"
+
+- Standardized
+	- spec / business logic
+	- host
+	- APIs
+	- markup
+	- styles
+
+- Quality - Should be written by an expert
+
+---
+
+### [gothinkster/realworld](https://github.com/gothinkster/realworld)
+> "The mother of all demo apps" Exemplary fullstack Medium.com clone powered by React, Angular, Node, Django, and many more 🏅
+
+
+![image](https://github.com/gothinkster/realworld/raw/master/media/stacks_hr.gif)
+
+---
+
+## Metrics
+
+1. Speed - How fast is the App?
+2. Size - How big is the App?
+3. Lines of Code - How many lines of code needed to create a [readworld](https://github.com/gothinkster/realworld) app?
+
+---
+
+## Metric #1: Speed
+
+
+- Index: [First Meaningful Paint](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint)
+- Tool: [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+
+---
+
+> First meaningful paint (ms) - lower is better
+
+![image](https://cdn-images-1.medium.com/max/1000/1*C_VGnwYj_OAnTVT0ae7KQQ.png)
+
+
+---
+
+
+## Metric #2: Size
+
+
+> Smaller file = faster download and less to parse
+
+
+---
+
+> Transfer size (KB) - lower is better
+
+![image](https://cdn-images-1.medium.com/max/1000/1*aCk-dOqiyXkelBZN9Qqo_w.png)
+
+---
+
+## Metric #3: Lines of Code
+
+> The fewer lines of code you have the smaller probability of an error and smaller code base to maintain.
+
+Tool: [cloc](https://github.com/AlDanial/cloc)
+
+---
+
+> Lines of code - fewer is better
+
+![image](https://cdn-images-1.medium.com/max/1000/1*e7JrTa1eUCGxOZEQOFfiDA.png)
+
+---
+
+class: center, middle
+
+## Wait,
+how about `Vue`, `Ember` and other libraries/frameworks? 🛠 [WIP](https://github.com/gothinkster/realworld#frontends)
+
+---
+
+class: center, middle
+
+# Lighthouse
+Chrome DevTool > `Audits`
+
+---
+
+## Audits
+
+- Progressive Web App
+- Performance
+- Accessibility
+- Best Practices
+
+---
+
+## Audits
+
+- ~~Progressive Web App~~ 😛
+- Performance
+- Accessibility
+- Best Practices
+
+---
+
+## Audits
+
+- Progressive Web App
+- **Performance**
+- Accessibility
+- Best Practices
+
+---
+
+### Performance
+
+- **Environment**: slower 3G connection
+- **Target**: SEO pages (especially those pages that are easily reachable on mobile devices)
+
+---
+
+### Performance
+
+- Metrics
+- Opportunities
+- Diagnostics
+
+---
+
+### Performance
+
+- **Metrics**
+	- [First Meaningful Paint](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint)
+	- [First Interactive](https://developers.google.com/web/tools/lighthouse/audits/first-interactive)
+	- [Perceptual Speed Index](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index) (target: < 1,250)
+	- Estimated Input Latency (target: < 50ms)
+- Opportunities
+- Diagnostics
+
+---
+
+### Performance
+
+- Metrics
+- **Opportunities**
+	- Serve images as WebP
+	- Offscreen images
+	- Reduce render-blocking stylesheets
+	- Properly image sizes
+	- Time to first byte (TTFB)
+	- ...
+- Diagnostics
+
+---
+
+### Performance
+
+- Metrics
+- Opportunities
+- **Diagnostics**
+	- Has enormous network payloads (< 1,600 KB)
+	- Critical Request Chains
+	- ...
+
+---
+
+
+## Audits
+
+- Progressive Web App
+- Performance
+- **Accessibility**
+- Best Practices
+
+---
+
+
+### Accessibility
+
+- Color Contrast
+- Meta tags used properly
+- Elements use atrributes correctly 
+- Elements have discernalbe names (`link text`, `alt text`)
+- Specify valid language (`[lang]` attribute)
+- ...
+
+---
+
+
+## Audits
+
+- Progressive Web App
+- Performance
+- Accessibility
+- **Best Practices**
+
+---
+
+### Best Practices
+
+- use HTTPS
+- use HTTP/2
+- avoid `document.write()`
+- render images in appropriate aspect ratio
+- open external anchors using `rel="noopener"`
+- ...
+
+---
+
+class: center, middle
+
+## Wait,
+why we need `rel="noopener` for external links?
+
+---
+
+class: middle
+
+#### 😈 &nbsp; Security Vulnerability
+> Without this, the new page can access your `window` object via `window.opener`
+
+
+#### 🚀 &nbsp; Performance
+> `rel="noopener"` prevents `window.opener`, so there's no cross-window access. Chromium browsers optimise for this and open the new page in its own process.
+
+---
+
+class: center, middle
+
+## Demo
+
+---
+
+class: center, middle
+
+## To conclude,
+
+I think we should [Measure Performance with the RAIL Model](https://developers.google.com/web/fundamentals/performance/rail)
+
+---
+
+## RAIL Model
+
+- **Response** - acknowledge user input `< 100ms`
+- **Animation** - `60 fps`
+- **Idle** - Maximize main thread idle time
+- **Load** - deliver interactive content `< 1000ms`
+
+---
+
+class: center, middle
+
+# Thanks ✌️
+
+---
+
+### References
+
+- [A Real-World Comparison of Front-End Frameworks with Benchmarks](https://medium.freecodecamp.org/a-real-world-comparison-of-front-end-frameworks-with-benchmarks-e1cb62fd526c)
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [The performance benefits of rel=noopener](https://jakearchibald.com/2016/performance-benefits-of-rel-noopener/#windows-processes)
+- [Measure Performance with the RAIL Model](https://developers.google.com/web/fundamentals/performance/rail)
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
